@@ -31,3 +31,5 @@
 - <span></span> Simple wrapper which doesn't have any specific
   format (it is usually used to target specific text for CSS or
   JavaScript)
+
+# 2.5 Headings
