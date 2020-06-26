@@ -25,3 +25,9 @@
 - identation is based on the concept of children - parent
   (child should be always one tab further than parent)
 - the browser makes up for for bad coding (but not all all the time)
+
+# 2.4 Parent-Child Relationships
+
+- <span></span> Simple wrapper which doesn't have any specific
+  format (it is usually used to target specific text for CSS or
+  JavaScript)
