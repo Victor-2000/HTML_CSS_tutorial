@@ -33,3 +33,6 @@
   JavaScript)
 
 # 2.5 Headings
+
+- There are 5 headings <h{here goes 1-5}>
+  (priorities go descending from 1-5)
