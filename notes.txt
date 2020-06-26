@@ -1,0 +1,6 @@
+# 2.1 Your first Web Page
+
+- <meta charset = "utf-8" /> Instructs the browser how to render specific characters
+- <meta name = "value"> </meta> When there is not any text ment to be inbetween a tag, 
+  it is common to put /> instead of ></tag> for example 
+  (but /> is optional actually, you can just use >)
