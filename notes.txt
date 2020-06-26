@@ -4,5 +4,3 @@
 - <meta name = "value"> </meta> When there is not any text ment to be inbetween a tag, 
   it is common to put /> instead of ></tag> for example 
   (but /> is optional actually, you can just use >)
-
-  - 1234
