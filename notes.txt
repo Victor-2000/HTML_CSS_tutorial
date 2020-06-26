@@ -11,4 +11,17 @@
   every content is (for ex. don't leave text without tags)
 - <em></em> stands for emphasis tag (makes text italic)
 - <strong></strong> makes text bold
+- <p></p> separates text into paragraphs (gets them to a new line also)
 - you can change default styles of any tag (by using CSS)
+
+# 2.3 Lists
+
+- <ul></ul> unordered list
+- <ol></ol> ordered list
+    - <li></li> list item (child of the 2 previous list tags)
+- <dl></dl> definition list
+    - <dt></dt> definition term (the child of definition list)
+    - <dd></dd> definition (the child of definition list)
+- identation is based on the concept of children - parent
+  (child should be always one tab further than parent)
+- the browser makes up for for bad coding (but not all all the time)
