@@ -28,7 +28,7 @@
 
 # 2.4 Parent-Child Relationships
 
-- <span></span> Simple wrapper which doesn't have any specific
+- <span></span> simple wrapper which doesn't have any specific
   format (it is usually used to target specific text for CSS or
   JavaScript)
 
@@ -36,3 +36,8 @@
 
 - There are 5 headings <h{here goes 1-5}>
   (priorities go descending from 1-5)
+
+# 2.6 Block Quotes
+
+- <blockquote></blockquote> shows that text is a block quote 
+  it does not have any special style (but that can be changed in CSS)
