@@ -4,3 +4,11 @@
 - <meta name = "value"> </meta> When there is not any text ment to be inbetween a tag, 
   it is common to put /> instead of ></tag> for example 
   (but /> is optional actually, you can just use >)
+
+# 2.2 Finding a proper code editor
+
+- It is always a best practice to explicitly specify what
+  every content is (for ex. don't leave text without tags)
+- <em></em> stands for emphasis tag (makes text italic)
+- <strong></strong> makes text bold
+- you can change default styles of any tag (by using CSS)
