@@ -50,3 +50,25 @@
 - http://jeffrey-way.com useful website for learning web tech
 - index.html from root directory is the default page which is
   first opened by the web host
+
+# 3.1 Your First Stylesheet
+
+- Most of the tags have style attributes which can accept CSS
+  as input for the current tag. (you can change display style)
+- CSS is usually represented in the shape "propertyName:
+  propertyValue;"
+- One CSS property is color. Color determines the color of
+  the text. (you can have a predefined color (as yellow or
+  black), an rgb/rgba (255,255,255,255{this one is the alpha)
+  and an hex for example (#e3e3e3))
+- text-decoration - that determines the type of decoration the
+  text can have (can be underline or none)
+
+- The best practice is to create a stylesheet and separate
+  all the CSS from the HTML because otherwise it takes all
+  the purpose of the html (solely describing the content)
+- In CSS files it is important to specify the tag through this
+  format "tagName{styleConfig}".
+- font-family - can be multiple fonts (ex. helvetica,arial
+  if helvetica is not available then the browser falls back to
+  arial)
