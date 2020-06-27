@@ -6,3 +6,9 @@ a {
 h1 {
   font-family: Helvetica, Arial, sans-serif;
 }
+
+div {
+  width: 500px;
+  background-color: red;
+  margin: auto;
+}

@@ -53,6 +53,7 @@
 
 # 3.1 Your First Stylesheet
 
+- For importing CSS you should use <link rel="stylesheet" href="address" />
 - Most of the tags have style attributes which can accept CSS
   as input for the current tag. (you can change display style)
 - CSS is usually represented in the shape "propertyName:
@@ -72,3 +73,42 @@
 - font-family - can be multiple fonts (ex. helvetica,arial
   if helvetica is not available then the browser falls back to
   arial)
+
+# 3.2 Clean Project Structures
+
+- It is always considered to always divide your images, CSS
+  files and JavaScript files into their own folders.
+- It is very useful to make a base folder and file structures
+  for all projects.
+
+# 3.3 Images
+
+- <img src="source"/> image tag (must have a src - source
+  which can be local or on the internet (it is not
+  recomended to use the internet address) )
+- alt is another parameter of the img tag. It shows an
+  alternative text if the image has not been found.
+
+# 3.4 The Necessity of Divs
+
+- You can use commas to give the same style characteristics
+  to a long series of tags.
+- Div is usually used to make a set of tags follow the same
+  positioning/styling (for example adding a margin to all).
+
+# 3.5 IDs and Classes
+
+- When projects are small you can use inline css (put <style></style> tags in the head of the html)
+- id is an attribute of most of the tags which can be
+  referenced for changing the style in the css file (id has
+  the key character in css of #)
+- id should not be used for multiple tags it should be
+  particular.
+- for effecting a group of tags we should use classes instead
+  (class has the key character in css of .) .
+- you can also use "tagName:nth-child(orderNum)" in css for
+  targeting a specific tag. It finds for every parent of
+  tagName the orderNum th child and changes it accordingly to
+  the css specs.
+- "tagName: first-of-type" is also a useful way of accessing
+  the first element of type tagName.
