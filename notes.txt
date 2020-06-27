@@ -41,3 +41,12 @@
 
 - <blockquote></blockquote> shows that text is a block quote 
   it does not have any special style (but that can be changed in CSS)
+
+# 2.7 Anchors
+
+- <a href = "address"></a> this is an anchor (an anchor is basically)
+  - <a target = "_blank"> an attribute of <a> which opens a new
+    page in a new tab when clicked
+- http://jeffrey-way.com useful website for learning web tech
+- index.html from root directory is the default page which is
+  first opened by the web host
