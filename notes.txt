@@ -112,3 +112,7 @@
   the css specs.
 - "tagName: first-of-type" is also a useful way of accessing
   the first element of type tagName.
+
+# 3.7 Assignment Solutions
+
+- You should use blockquotes when neccesary. (not just divs)
