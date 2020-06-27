@@ -3,5 +3,31 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body></body>
+  <body>
+    <form action="" method="GET">
+      <ul>
+        <li>
+          <label for="name"> Enter Your Name:</label>
+          <input id="name" type="text" name="name" />
+        </li>
+        <li>
+          <label for="comments">Your comments:</label>
+          <textarea id="comments" name="comments"> </textarea>
+        </li>
+        <li>
+          <label for="css">Do you like CSS?</label>
+          <input type="checkbox" name="css" id="css" />
+        </li>
+        <li>
+          <label for="css">Favorite Language?</label>
+          <input type="radio" name="css" id="css" /> CSS
+          <input type="radio" name="html" id="html" /> HTML
+          <input type="radio" name="javascript" id="javascript" /> JavaScript
+          <input type="radio" name="ruby" id="ruby" /> Ruby
+        </li>
+
+        <li><input type="submit" value="Go!" /></li>
+      </ul>
+    </form>
+  </body>
 </html>

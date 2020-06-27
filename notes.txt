@@ -142,3 +142,39 @@
   which has the form of tagName:pseudoClassName{CSS content}
   one of these is "hover" (ex: div:hover{this will be
   executed on hover})
+
+# 4.2 An Introduction to Forms
+
+- The form is written in html as
+    <form action="" method=""></form>
+  - method describes how are the contents of your form are 
+  transmited to the server-side language of choice (you can 
+  use "get" and "post").
+  - action describes to which page the content will be sent.
+- The input is written in html as
+  <input type="" value="" name=""/>
+  - type takes a number of different values (text/submit/
+    radio/checkbox) which has different functions.
+  - the text, submit(the button), and checkbox is self
+    explanatory.
+  - the radio button is the same as a checkbox but once
+    checked it cannot be unchecked.
+  - the checkbox when using get is not returning anything if
+    it is off and it returns "name = on" if it is on.
+  - the value is used when using the submit type to change
+    the name of the submit button
+  - in case you add an id to the input it is good practice
+    to also add a name to it with the same value because it
+    will help when working to a server side language (it
+    usually references it by name and you don't wanna mess up
+    name with id).
+- The label is written in html as
+  <label></label>
+  label is usually used for adding text description to inputs
+  - for making a label to activate an input when clicking you
+    can use the attribute for with the id value from the input
+    you want to open.
+- The textarea is written in html as
+  <textarea></textarea>
+  textarea has the same specs as input (the text type one)
+  but can support more lines
