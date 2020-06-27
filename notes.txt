@@ -133,3 +133,12 @@
   wrapper which is a part of the div.
 - another solution is to use to the targeted div also the
   property overflow:hidden;
+
+# 4.1 Navigation Lists
+
+- display: inline; shows a series of containers in a line
+  till the container is too small to fit all the elements. Then it overflows to a new line.
+- A tagName css specification can have also a pseudo class
+  which has the form of tagName:pseudoClassName{CSS content}
+  one of these is "hover" (ex: div:hover{this will be
+  executed on hover})
