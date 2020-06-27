@@ -116,3 +116,20 @@
 # 3.7 Assignment Solutions
 
 - You should use blockquotes when neccesary. (not just divs)
+
+# 3.8 Floats, and a Simple Layout
+
+- <aside></aside> is a tag which is used usually for side 
+  content in a site
+- a good practice is to use all tags by their specification
+  even if they don't have predefined styling and not use div
+  all the time
+- for limiting the width or height of a container (when using
+  percentages) you can use min-width/min-height
+- you can use "float" for moving containers to the sides
+- when using "float" you basically remove the elements from the
+  container so you can't use it for a background for example
+- for solving the problem above you can use a footer in the div
+  wrapper which is a part of the div.
+- another solution is to use to the targeted div also the
+  property overflow:hidden;
