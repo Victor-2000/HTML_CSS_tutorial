@@ -232,3 +232,24 @@
   it
 - a good site for validation is https://validator.w3.org/
 - for css validation you can use https://jigsaw.w3.org/css-validator/#validate_by_upload
+
+# 5.1 Zen Coding
+
+- you can make sets of tags by writing just the name of the
+  tag
+- for making a div with a class specific you can use .class
+  (for id you use #id)
+- for another type of tag you can use nameOfTag#id /
+  nameOfTag.class
+- if you wanna make a parent and a child inside you can do
+  nameOfTagParent>NameOfTagChild
+- if you wanna write more children in one parent you can do
+  it like this: ul>li\*noOfChildren (note: tab also takes you
+  through each stop point in the li's)
+- for writing text you can do ul>li{Hello} and it will be
+  written down
+- if you want to create a sibling you can use +
+- for specifiing parameters you can use [parameterName =
+  value]
+
+# 5.2 Resets and Normalizing
