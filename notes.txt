@@ -253,3 +253,16 @@
   value]
 
 # 5.2 Resets and Normalizing
+
+- most of the time you have to reset huge parts of the
+  stylesheet so it is good to start everything from 0.
+- for starting everything from 0 you can use a reset
+  stylesheet. One good reset stylesheet is on
+  meyerweb.com/eric/tools/css/reset/
+- it is a good practice to not use a lot of stylesheets on a
+  page because it takes a lot of get requests so you have to:
+  connect all of them in one or make a script to get them
+  all together.
+- another method is normalize.css which makes browsers render
+  all elements more consistently and in line with the modern
+  standards.
