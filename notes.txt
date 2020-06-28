@@ -201,4 +201,26 @@
   - you can also use a comma to make more than one shadow
 - you can also import custom fonts from the google fonts site
   you just need to copy and paste the link tag and you are
-  good to go
+  good to go.
+
+# 4.5 The Difference Between Relative and Absolute Positioning
+
+- position - attribute which can be relative or absolute.
+  - when the position is defined you can specify left,right,
+    top and bottom as parameters.
+  - absolute positioning is positioning relative to the
+    nearest positioned parent.
+  - relative positioning is positioning relative to the above
+    parent (no need for position defining).
+
+# 4.6 Reproduce a Website Fragment
+
+- you can also do "margin: top right bottom left" or
+  "margin: vertical horizontal" or "margin: top horizontal
+  bottom"
+- you can also use the "tagName:after" pseudo class to add
+  content after text in css.
+- in css the lower the characteristic is the higher priority
+  it has.
+- you can clear floats that are above elements by using
+  "clear: both"
