@@ -266,3 +266,18 @@
 - another method is normalize.css which makes browsers render
   all elements more consistently and in line with the modern
   standards.
+
+# 5.3 CSS Frameworks
+
+- one famous css framework for frontend programmers is 960
+  grid system it helps to make 12,16 or 24 column grids
+- grid_noCol shows the proportions of the cell you want to add
+  they should always add up to 12(or the maxCol).
+- if you see that 2 cells don't go one next to each other try
+  to use the clearfix class on their parent.
+- when you want to add padding to your cells the best
+  practice is to use the older form of box organising. You
+  can do this by using "box-sizing: border-box;"
+- also good practice is to add prefixes for all kinds of
+  browsers because not all browsers can support new versions of
+  css attributes.
