@@ -178,3 +178,27 @@
   <textarea></textarea>
   textarea has the same specs as input (the text type one)
   but can support more lines
+
+# 4.3 Image Replacement
+
+- for replacing a tag with writing with an image you can use the background attribute with url("enter local or internet address") as a value and also a no-repeat value with it and an very small number of pixels for the text indent.
+- to recap :
+  tagName {
+  background: url(../img/logo-small.svg) no-repeat;
+  text-indent: -9999px;
+  }
+- an alternative would be <h1><img src="" alt="lorem"></h1>
+  but the first one is more practical.
+
+# 4.4 The Basics of Typography
+
+- letter-spacing - the spacing between letters
+- for huge fonts(like for h1) you can use negative
+  letter-spacing. It looks much more stylish.
+- text-transform - can make text upper case, lower case,
+  capitalised etc.
+- text-shadow - xpx ypx blurpx color
+  - you can also use a comma to make more than one shadow
+- you can also import custom fonts from the google fonts site
+  you just need to copy and paste the link tag and you are
+  good to go
