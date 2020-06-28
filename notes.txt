@@ -224,3 +224,11 @@
   it has.
 - you can clear floats that are above elements by using
   "clear: both"
+
+# 4.7 The Importance of Validation
+
+- you can screw up your code if you don't pay attention to div
+  closing tags for example so it is very important to validate
+  it
+- a good site for validation is https://validator.w3.org/
+- for css validation you can use https://jigsaw.w3.org/css-validator/#validate_by_upload
