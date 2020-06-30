@@ -1,3 +1,12 @@
+# Important notes
+
+- for the purpose of making visual studio more comforatable
+  and alike to the tutorial code editor I installed 2 extensions
+- Lorem Ipsum - press F1 and write lorem ipsum then choose an
+  option.
+- live emmet abbreviations - press F1 and search for emmet
+  live
+
 # 2.1 Your first Web Page
 
 - <meta charset = "utf-8" /> Instructs the browser how to render specific characters
@@ -281,3 +290,18 @@
 - also good practice is to add prefixes for all kinds of
   browsers because not all browsers can support new versions of
   css attributes.
+
+# 6 Website project
+
+- try to save photos with a smallest quality as possible from
+  the psd so that it is not noticeably pixelated but also
+  doesn't take a lot of space.
+
+- If you are working with a server side language try to
+  abstract elements like headers and footers (put them in
+  different folders) and sandwich the content within with them
+  with the language.
+
+- If you want to style something that is one way in one page
+  and different in another (h2's for example) you should give
+  another class to the body or to the local parents.
