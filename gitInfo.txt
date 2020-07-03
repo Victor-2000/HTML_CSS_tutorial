@@ -121,3 +121,15 @@ them ready)
   have to write git tag tagName.
 - for getting information about a tag you can use git show 
   tagName.
+
+#4 Notes
+
+- for adding a site as a project (if you wanna host it 
+on github) you have to use username.github.io as the name 
+of the project and you can visit it by writing the name as 
+an address.
+- for adding a website to a project you should make a branch
+which is named gh-pages. You can save everything related to 
+your site in there.
+- search github pages for more info about how to make sites 
+hosted on github.
