@@ -1,3 +1,19 @@
+# Useful tips
+
+- if you want to edit and save changes in css/js/html in
+  realtime you should:
+  - go to dev tools
+  - choose the sources tab
+  - choose the filesystem tab
+  - click on the + icon
+  - choose the working directory
+  - open the css file
+  - have fun time coding :)
+- when using dt:last-child it only works if the dt is actually
+  the last child of the parent if dt is not the last you can use
+  dt:nth-last-child(2) (which means that you get the second to
+  the last child)
+
 # 2.1 Hello jQuery
 
 - It is considered good practice to write the import of the scripts at the end of the body
@@ -87,3 +103,16 @@
 - .removeAttr(attributeName) removes an attribute
 - you can combine actions by using an .end() method which  
   gets you one jQuery selection back.
+
+# 2.5 Events 201
+
+- the filter function is a very good way to select particular
+  elements from a list
+  (for ex. dd.filter(':nth-child(n+4)') selects from the fourth
+  children all dd in the list)
+- you can also use the .slideDown(time) and slideUp(time)
+  methods to make the ui fancy
+
+# 2.6 Bind...Live...Delegate...Huh?
+
+-
