@@ -46,3 +46,44 @@
 - if you want to move from one child to the next one you can
   use .next() method (for ex. ... .eq(3).next() returns the
   5th element)
+- there is also a function for the previous child: .prev()
+- there is an add class as well as remove class method in
+  jQuery (.addClass() .removeClass())
+- for accessing direct parents of an element you can use
+  the method .parent() (the total oposite of .child())
+- if you want to access also all the grandparents and parents
+  and so on you can use the method .parents()
+- if you need to find the first closest element in the dom
+  tree which has a certain spec you can use .closest()
+
+# 2.4 Events 101
+
+- it is considered bad practice to use global variables in
+  scripts because you are filling them up. A better way is
+  to make a function that calls itself and put the variables there.
+  (for ex:
+  (() => {
+
+  })();
+  thats actually the anonymous function equivalent to
+  funcName(); call
+  )
+
+- 'this' returns the DOM element itself for using jQuery
+  methods you should call \$(this)
+- arrow functions have no this context so to fix such problem
+  you could use (e) => {\$(e.target)}
+- to access attributes you can use the method
+  .attr(nameOfAttribute)
+- to change attributes you can use .attr(name,changedValue)
+- for creating custom attributes in html you have to add
+  data-nameOfAttribute
+- calling jQuery a lot of times is time consuming so it
+  should be used as least as possible (use variables instead if you wanna search for the same element later or its child)
+- if you are working with custom attributes you can use the
+  .data() method. When using this method you can use ommit the
+  data- part of the attribute for example instead of
+  .data(data-json) you use .data(json) .
+- .removeAttr(attributeName) removes an attribute
+- you can combine actions by using an .end() method which  
+  gets you one jQuery selection back.
