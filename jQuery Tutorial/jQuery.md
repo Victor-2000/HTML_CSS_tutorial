@@ -17,7 +17,7 @@
 # 2.1 Hello jQuery
 
 - It is considered good practice to write the import of the scripts at the end of the body
-- To import a js script you should place this line of code: "<script src="jquery-3.5.1.js"></script>"
+- To import a js script you should place this line of code: "&lt;script src="jquery-3.5.1.js">&lt;/script>"
 - To search for something in the page you can use the function
   jQuery('cssIndicator')
 - For adding css to the found files by jQuery you should use:
