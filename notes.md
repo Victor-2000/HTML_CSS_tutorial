@@ -9,52 +9,52 @@
 
 # 2.1 Your first Web Page
 
-- <meta charset = "utf-8" /> Instructs the browser how to render specific characters
-- <meta name = "value"> </meta> When there is not any text ment to be inbetween a tag, 
-  it is common to put /> instead of ></tag> for example 
+- &lt;meta charset = "utf-8" /> Instructs the browser how to render specific characters
+- &lt;meta name = "value"> &lt;/meta> When there is not any text ment to be inbetween a tag,
+  it is common to put /> instead of >&lt;/tag> for example
   (but /> is optional actually, you can just use >)
 
 # 2.2 Finding a proper code editor
 
 - It is always a best practice to explicitly specify what
   every content is (for ex. don't leave text without tags)
-- <em></em> stands for emphasis tag (makes text italic)
-- <strong></strong> makes text bold
-- <p></p> separates text into paragraphs (gets them to a new line also)
+- &lt;em>&lt;/em> stands for emphasis tag (makes text italic)
+- &lt;strong>&lt;/strong> makes text bold
+- &lt;p>&lt;/p> separates text into paragraphs (gets them to a new line also)
 - you can change default styles of any tag (by using CSS)
 
 # 2.3 Lists
 
-- <ul></ul> unordered list
-- <ol></ol> ordered list
-    - <li></li> list item (child of the 2 previous list tags)
-- <dl></dl> definition list
-    - <dt></dt> definition term (the child of definition list)
-    - <dd></dd> definition (the child of definition list)
+- &lt;ul>&lt;/ul> unordered list
+- &lt;ol>&lt;/ol> ordered list
+  - &lt;li>&lt;/li> list item (child of the 2 previous list tags)
+- &lt;dl>&lt;/dl> definition list
+  - &lt;dt>&lt;/dt> definition term (the child of definition list)
+  - &lt;dd>&lt;/dd> definition (the child of definition list)
 - identation is based on the concept of children - parent
   (child should be always one tab further than parent)
 - the browser makes up for for bad coding (but not all all the time)
 
 # 2.4 Parent-Child Relationships
 
-- <span></span> simple wrapper which doesn't have any specific
+- &lt;span>&lt;/span> simple wrapper which doesn't have any specific
   format (it is usually used to target specific text for CSS or
   JavaScript)
 
 # 2.5 Headings
 
-- There are 5 headings <h{here goes 1-5}>
+- There are 5 headings &lt;h{here goes 1-5}>
   (priorities go descending from 1-5)
 
 # 2.6 Block Quotes
 
-- <blockquote></blockquote> shows that text is a block quote 
+- &lt;blockquote>&lt;/blockquote> shows that text is a block quote
   it does not have any special style (but that can be changed in CSS)
 
 # 2.7 Anchors
 
-- <a href = "address"></a> this is an anchor (an anchor is basically)
-  - <a target = "_blank"> an attribute of <a> which opens a new
+- &lt;a href = "address">&lt;/a> this is an anchor (an anchor is basically)
+  - &lt;a target = "\_blank"> an attribute of &lt;a> which opens a new
     page in a new tab when clicked
 - http://jeffrey-way.com useful website for learning web tech
 - index.html from root directory is the default page which is
@@ -62,7 +62,7 @@
 
 # 3.1 Your First Stylesheet
 
-- For importing CSS you should use <link rel="stylesheet" href="address" />
+- For importing CSS you should use &lt;link rel="stylesheet" href="address" />
 - Most of the tags have style attributes which can accept CSS
   as input for the current tag. (you can change display style)
 - CSS is usually represented in the shape "propertyName:
@@ -92,7 +92,7 @@
 
 # 3.3 Images
 
-- <img src="source"/> image tag (must have a src - source
+- &lt;img src="source"/> image tag (must have a src - source
   which can be local or on the internet (it is not
   recomended to use the internet address) )
 - alt is another parameter of the img tag. It shows an
@@ -107,7 +107,7 @@
 
 # 3.5 IDs and Classes
 
-- When projects are small you can use inline css (put <style></style> tags in the head of the html)
+- When projects are small you can use inline css (put &lt;style>&lt;/style> tags in the head of the html)
 - id is an attribute of most of the tags which can be
   referenced for changing the style in the css file (id has
   the key character in css of #)
@@ -128,7 +128,7 @@
 
 # 3.8 Floats, and a Simple Layout
 
-- <aside></aside> is a tag which is used usually for side 
+- &lt;aside>&lt;/aside> is a tag which is used usually for side
   content in a site
 - a good practice is to use all tags by their specification
   even if they don't have predefined styling and not use div
@@ -155,13 +155,13 @@
 # 4.2 An Introduction to Forms
 
 - The form is written in html as
-    <form action="" method=""></form>
-  - method describes how are the contents of your form are 
-  transmited to the server-side language of choice (you can 
-  use "get" and "post").
+  &lt;form action="" method="">&lt;/form>
+  - method describes how are the contents of your form are
+    transmited to the server-side language of choice (you can
+    use "get" and "post").
   - action describes to which page the content will be sent.
 - The input is written in html as
-  <input type="" value="" name=""/>
+  &lt;input type="" value="" name=""/>
   - type takes a number of different values (text/submit/
     radio/checkbox) which has different functions.
   - the text, submit(the button), and checkbox is self
@@ -178,13 +178,13 @@
     usually references it by name and you don't wanna mess up
     name with id).
 - The label is written in html as
-  <label></label>
+  &lt;label>&lt;/label>
   label is usually used for adding text description to inputs
   - for making a label to activate an input when clicking you
     can use the attribute for with the id value from the input
     you want to open.
 - The textarea is written in html as
-  <textarea></textarea>
+  &lt;textarea>&lt;/textarea>
   textarea has the same specs as input (the text type one)
   but can support more lines
 
@@ -196,7 +196,7 @@
   background: url(../img/logo-small.svg) no-repeat;
   text-indent: -9999px;
   }
-- an alternative would be <h1><img src="" alt="lorem"></h1>
+- an alternative would be &lt;h1>&lt;img src="" alt="lorem">&lt;/h1>
   but the first one is more practical.
 
 # 4.4 The Basics of Typography
