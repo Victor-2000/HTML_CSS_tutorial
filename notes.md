@@ -1,0 +1,307 @@
+# Important notes
+
+- for the purpose of making visual studio more comforatable
+  and alike to the tutorial code editor I installed 2 extensions
+- Lorem Ipsum - press F1 and write lorem ipsum then choose an
+  option.
+- live emmet abbreviations - press F1 and search for emmet
+  live
+
+# 2.1 Your first Web Page
+
+- <meta charset = "utf-8" /> Instructs the browser how to render specific characters
+- <meta name = "value"> </meta> When there is not any text ment to be inbetween a tag, 
+  it is common to put /> instead of ></tag> for example 
+  (but /> is optional actually, you can just use >)
+
+# 2.2 Finding a proper code editor
+
+- It is always a best practice to explicitly specify what
+  every content is (for ex. don't leave text without tags)
+- <em></em> stands for emphasis tag (makes text italic)
+- <strong></strong> makes text bold
+- <p></p> separates text into paragraphs (gets them to a new line also)
+- you can change default styles of any tag (by using CSS)
+
+# 2.3 Lists
+
+- <ul></ul> unordered list
+- <ol></ol> ordered list
+    - <li></li> list item (child of the 2 previous list tags)
+- <dl></dl> definition list
+    - <dt></dt> definition term (the child of definition list)
+    - <dd></dd> definition (the child of definition list)
+- identation is based on the concept of children - parent
+  (child should be always one tab further than parent)
+- the browser makes up for for bad coding (but not all all the time)
+
+# 2.4 Parent-Child Relationships
+
+- <span></span> simple wrapper which doesn't have any specific
+  format (it is usually used to target specific text for CSS or
+  JavaScript)
+
+# 2.5 Headings
+
+- There are 5 headings <h{here goes 1-5}>
+  (priorities go descending from 1-5)
+
+# 2.6 Block Quotes
+
+- <blockquote></blockquote> shows that text is a block quote 
+  it does not have any special style (but that can be changed in CSS)
+
+# 2.7 Anchors
+
+- <a href = "address"></a> this is an anchor (an anchor is basically)
+  - <a target = "_blank"> an attribute of <a> which opens a new
+    page in a new tab when clicked
+- http://jeffrey-way.com useful website for learning web tech
+- index.html from root directory is the default page which is
+  first opened by the web host
+
+# 3.1 Your First Stylesheet
+
+- For importing CSS you should use <link rel="stylesheet" href="address" />
+- Most of the tags have style attributes which can accept CSS
+  as input for the current tag. (you can change display style)
+- CSS is usually represented in the shape "propertyName:
+  propertyValue;"
+- One CSS property is color. Color determines the color of
+  the text. (you can have a predefined color (as yellow or
+  black), an rgb/rgba (255,255,255,255{this one is the alpha)
+  and an hex for example (#e3e3e3))
+- text-decoration - that determines the type of decoration the
+  text can have (can be underline or none)
+
+- The best practice is to create a stylesheet and separate
+  all the CSS from the HTML because otherwise it takes all
+  the purpose of the html (solely describing the content)
+- In CSS files it is important to specify the tag through this
+  format "tagName{styleConfig}".
+- font-family - can be multiple fonts (ex. helvetica,arial
+  if helvetica is not available then the browser falls back to
+  arial)
+
+# 3.2 Clean Project Structures
+
+- It is always considered to always divide your images, CSS
+  files and JavaScript files into their own folders.
+- It is very useful to make a base folder and file structures
+  for all projects.
+
+# 3.3 Images
+
+- <img src="source"/> image tag (must have a src - source
+  which can be local or on the internet (it is not
+  recomended to use the internet address) )
+- alt is another parameter of the img tag. It shows an
+  alternative text if the image has not been found.
+
+# 3.4 The Necessity of Divs
+
+- You can use commas to give the same style characteristics
+  to a long series of tags.
+- Div is usually used to make a set of tags follow the same
+  positioning/styling (for example adding a margin to all).
+
+# 3.5 IDs and Classes
+
+- When projects are small you can use inline css (put <style></style> tags in the head of the html)
+- id is an attribute of most of the tags which can be
+  referenced for changing the style in the css file (id has
+  the key character in css of #)
+- id should not be used for multiple tags it should be
+  particular.
+- for effecting a group of tags we should use classes instead
+  (class has the key character in css of .) .
+- you can also use "tagName:nth-child(orderNum)" in css for
+  targeting a specific tag. It finds for every parent of
+  tagName the orderNum th child and changes it accordingly to
+  the css specs.
+- "tagName: first-of-type" is also a useful way of accessing
+  the first element of type tagName.
+
+# 3.7 Assignment Solutions
+
+- You should use blockquotes when neccesary. (not just divs)
+
+# 3.8 Floats, and a Simple Layout
+
+- <aside></aside> is a tag which is used usually for side 
+  content in a site
+- a good practice is to use all tags by their specification
+  even if they don't have predefined styling and not use div
+  all the time
+- for limiting the width or height of a container (when using
+  percentages) you can use min-width/min-height
+- you can use "float" for moving containers to the sides
+- when using "float" you basically remove the elements from the
+  container so you can't use it for a background for example
+- for solving the problem above you can use a footer in the div
+  wrapper which is a part of the div.
+- another solution is to use to the targeted div also the
+  property overflow:hidden;
+
+# 4.1 Navigation Lists
+
+- display: inline; shows a series of containers in a line
+  till the container is too small to fit all the elements. Then it overflows to a new line.
+- A tagName css specification can have also a pseudo class
+  which has the form of tagName:pseudoClassName{CSS content}
+  one of these is "hover" (ex: div:hover{this will be
+  executed on hover})
+
+# 4.2 An Introduction to Forms
+
+- The form is written in html as
+    <form action="" method=""></form>
+  - method describes how are the contents of your form are 
+  transmited to the server-side language of choice (you can 
+  use "get" and "post").
+  - action describes to which page the content will be sent.
+- The input is written in html as
+  <input type="" value="" name=""/>
+  - type takes a number of different values (text/submit/
+    radio/checkbox) which has different functions.
+  - the text, submit(the button), and checkbox is self
+    explanatory.
+  - the radio button is the same as a checkbox but once
+    checked it cannot be unchecked.
+  - the checkbox when using get is not returning anything if
+    it is off and it returns "name = on" if it is on.
+  - the value is used when using the submit type to change
+    the name of the submit button
+  - in case you add an id to the input it is good practice
+    to also add a name to it with the same value because it
+    will help when working to a server side language (it
+    usually references it by name and you don't wanna mess up
+    name with id).
+- The label is written in html as
+  <label></label>
+  label is usually used for adding text description to inputs
+  - for making a label to activate an input when clicking you
+    can use the attribute for with the id value from the input
+    you want to open.
+- The textarea is written in html as
+  <textarea></textarea>
+  textarea has the same specs as input (the text type one)
+  but can support more lines
+
+# 4.3 Image Replacement
+
+- for replacing a tag with writing with an image you can use the background attribute with url("enter local or internet address") as a value and also a no-repeat value with it and an very small number of pixels for the text indent.
+- to recap :
+  tagName {
+  background: url(../img/logo-small.svg) no-repeat;
+  text-indent: -9999px;
+  }
+- an alternative would be <h1><img src="" alt="lorem"></h1>
+  but the first one is more practical.
+
+# 4.4 The Basics of Typography
+
+- letter-spacing - the spacing between letters
+- for huge fonts(like for h1) you can use negative
+  letter-spacing. It looks much more stylish.
+- text-transform - can make text upper case, lower case,
+  capitalised etc.
+- text-shadow - xpx ypx blurpx color
+  - you can also use a comma to make more than one shadow
+- you can also import custom fonts from the google fonts site
+  you just need to copy and paste the link tag and you are
+  good to go.
+
+# 4.5 The Difference Between Relative and Absolute Positioning
+
+- position - attribute which can be relative or absolute.
+  - when the position is defined you can specify left,right,
+    top and bottom as parameters.
+  - absolute positioning is positioning relative to the
+    nearest positioned parent.
+  - relative positioning is positioning relative to the above
+    parent (no need for position defining).
+
+# 4.6 Reproduce a Website Fragment
+
+- you can also do "margin: top right bottom left" or
+  "margin: vertical horizontal" or "margin: top horizontal
+  bottom"
+- you can also use the "tagName:after" pseudo class to add
+  content after text in css.
+- in css the lower the characteristic is the higher priority
+  it has.
+- you can clear floats that are above elements by using
+  "clear: both"
+
+# 4.7 The Importance of Validation
+
+- you can screw up your code if you don't pay attention to div
+  closing tags for example so it is very important to validate
+  it
+- a good site for validation is https://validator.w3.org/
+- for css validation you can use https://jigsaw.w3.org/css-validator/#validate_by_upload
+
+# 5.1 Zen Coding
+
+- you can make sets of tags by writing just the name of the
+  tag
+- for making a div with a class specific you can use .class
+  (for id you use #id)
+- for another type of tag you can use nameOfTag#id /
+  nameOfTag.class
+- if you wanna make a parent and a child inside you can do
+  nameOfTagParent>NameOfTagChild
+- if you wanna write more children in one parent you can do
+  it like this: ul>li\*noOfChildren (note: tab also takes you
+  through each stop point in the li's)
+- for writing text you can do ul>li{Hello} and it will be
+  written down
+- if you want to create a sibling you can use +
+- for specifiing parameters you can use [parameterName =
+  value]
+
+# 5.2 Resets and Normalizing
+
+- most of the time you have to reset huge parts of the
+  stylesheet so it is good to start everything from 0.
+- for starting everything from 0 you can use a reset
+  stylesheet. One good reset stylesheet is on
+  meyerweb.com/eric/tools/css/reset/
+- it is a good practice to not use a lot of stylesheets on a
+  page because it takes a lot of get requests so you have to:
+  connect all of them in one or make a script to get them
+  all together.
+- another method is normalize.css which makes browsers render
+  all elements more consistently and in line with the modern
+  standards.
+
+# 5.3 CSS Frameworks
+
+- one famous css framework for frontend programmers is 960
+  grid system it helps to make 12,16 or 24 column grids
+- grid_noCol shows the proportions of the cell you want to add
+  they should always add up to 12(or the maxCol).
+- if you see that 2 cells don't go one next to each other try
+  to use the clearfix class on their parent.
+- when you want to add padding to your cells the best
+  practice is to use the older form of box organising. You
+  can do this by using "box-sizing: border-box;"
+- also good practice is to add prefixes for all kinds of
+  browsers because not all browsers can support new versions of
+  css attributes.
+
+# 6 Website project
+
+- try to save photos with a smallest quality as possible from
+  the psd so that it is not noticeably pixelated but also
+  doesn't take a lot of space.
+
+- If you are working with a server side language try to
+  abstract elements like headers and footers (put them in
+  different folders) and sandwich the content within with them
+  with the language.
+
+- If you want to style something that is one way in one page
+  and different in another (h2's for example) you should give
+  another class to the body or to the local parents.
