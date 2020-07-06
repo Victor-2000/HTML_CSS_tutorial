@@ -112,7 +112,18 @@
   children all dd in the list)
 - you can also use the .slideDown(time) and slideUp(time)
   methods to make the ui fancy
+- you can also add an event listener only to the parent of the
+  children who require event listeners and use the specifications to activate it on them by using:
+  .on(event,classSpec,function)
 
 # 2.6 Bind...Live...Delegate...Huh?
 
--
+- .bind() is the equivalent to on('click',function)
+- if you want to clone an element you can use the .clone()
+  method.
+  - if you want to retain the event handlers related to the
+    cloned object you have to pass in .clone(true)
+- to append an element to the body you can use
+  .appendTo('body')
+
+# 2.7 Creating and Appending Content

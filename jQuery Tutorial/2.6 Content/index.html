@@ -6,7 +6,22 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="container">
+      <h2>Click Me</h2>
+      <h2>Click Me</h2>
+      <h2>Click Me</h2>
+      <h2>Click Me</h2>
+    </div>
+
     <script src="../jquery-3.5.1.js"></script>
-    <script></script>
+
+    <script>
+      (function () {
+        $("div.container").delegate("h2", "click", function () {
+          console.log("clicked");
+          $(this).clone().appendTo(".container");
+        });
+      })();
+    </script>
   </body>
 </html>
