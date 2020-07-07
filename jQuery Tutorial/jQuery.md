@@ -127,3 +127,25 @@
   .appendTo('body')
 
 # 2.7 Creating and Appending Content
+
+- for appending to the end of an element you can use
+  the method .append("HTML/txt/\$")
+- for appending to the beginning of an element you can
+  use .prepend("HTML/txt/\$")
+- if you want to put something before an element you can
+  use .before("HTML/txt/\$")
+- if you want to put something after an element you can
+  use .after("HTML/txt/\$")
+- to append a class instead of an element you can use
+  .appendTo() for ex:
+  \$('&lt;h2></h2>', {
+  text: 'Hello from JavaScript',
+  class: 'myClass',
+  }).appendTo('article');
+  - if you call appendTo on something that extists it is
+    actually being moved for example:
+    \$('h1').appendTo('article') will move the h1 tag to
+    the end of the article.
+- there is also a prependTo method
+- also there is an insertAfter and insertBefore method
+  which works the same as the appendTo one
