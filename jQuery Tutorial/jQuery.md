@@ -167,3 +167,18 @@
   included elements of obj2 with obj1.
 - .is('className') method can check up if the current tag has
   some specific class or pseudo-class
+
+# 3.2 The this Keyword
+
+- when using .on('click',functionName) you can cancel the
+  default click event by taking an event parameter in the
+  function and using the .preventDefault() method. Ex:
+  function functionName(e){
+  e.preventDefault();
+  //... something that activates on click
+  }
+- .apply([hereGoesYourArrayElements]) is the same as call
+  the difference being that you put in an array as a
+  parameter
+- \$.proxy(func,thisArg) changes the function so it takes
+  thisArg as the 'this' value inside.

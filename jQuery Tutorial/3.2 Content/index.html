@@ -6,7 +6,26 @@
     <title>Document</title>
   </head>
   <body>
+    <a href="http://tutsplus.com">Click Me</a>
     <script src="../jquery-3.5.1.js"></script>
-    <script></script>
+    <script>
+      var obj = {
+        doIt: function (e) {
+          console.log(this);
+          e.preventDefault();
+        },
+      };
+
+      $("a").on("click", $.proxy(obj.doIt, obj));
+
+      // function doSomething(e) {
+      //   e.preventDefault();
+      //   console.log(this);
+      // }
+      // $("a").on("click", function (e) {
+      //   obj.doIt.call(this);
+      //   e.preventDefault();
+      // });
+    </script>
   </body>
 </html>
