@@ -3,10 +3,166 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Effects</title>
+    <style>
+      body {
+        width: 600px;
+        margin: auto;
+        font-family: sans-serif;
+      }
+
+      #contact {
+        background: #e3e3e3;
+        padding: 1em 2em;
+        position: relative;
+      }
+
+      .js #contact {
+        position: absolute;
+        top: 0;
+        width: inherit;
+        display: none;
+      }
+
+      #contact h2 {
+        margin-top: 0;
+      }
+
+      #contact ul {
+        padding: 0;
+      }
+
+      #contact li {
+        list-style: none;
+        margin-bottom: 1em;
+      }
+
+      /*Close button on form*/
+      .close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        font-weight: bold;
+        font-family: sans-serif;
+        cursor: pointer;
+      }
+
+      /*Form inputs*/
+      input,
+      textarea {
+        width: 100%;
+        line-height: 2em;
+      }
+      input[type="submit"] {
+        width: auto;
+      }
+      label {
+        display: block;
+        text-align: left;
+      }
+    </style>
   </head>
   <body>
+    <article>
+      <h1>My Awesome Post</h1>
+      <p>
+        Laborum voluptate excepteur irure tempor cillum est reprehenderit culpa
+        magna sint cillum magna excepteur.
+      </p>
+      <p>
+        In ullamco commodo non veniam nostrud consectetur Lorem. Amet ad aliquip
+        laboris duis fugiat ullamco irure nisi dolor. Culpa ad eu proident
+        eiusmod ex. Culpa ex amet excepteur qui est ex sunt sint qui sit dolor.
+        Fugiat duis exercitation veniam officia. Mollit occaecat esse eu labore
+        anim velit ipsum. Exercitation incididunt do pariatur dolore ex ullamco
+        eiusmod anim ullamco Lorem Lorem eu nulla.
+      </p>
+      <p>
+        Laborum excepteur ullamco qui deserunt excepteur duis aute enim dolor
+        Lorem commodo eiusmod ut.
+      </p>
+      <p>
+        Aute aliqua et cillum aute amet duis nulla veniam consequat irure dolor.
+        Laborum adipisicing consectetur ex sunt eu excepteur deserunt aliqua
+        tempor duis laborum velit voluptate. Sunt laborum reprehenderit eiusmod
+        sit id. Labore adipisicing eu velit nisi ipsum cillum.
+      </p>
+    </article>
+    <div id="contact">
+      <h2>Contact Me</h2>
+      <form action="#">
+        <ul>
+          <li>
+            <label for="name">Name:</label>
+            <input type="name" id="name" />
+          </li>
+          <li>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" />
+          </li>
+          <li>
+            <label for="comments">What's Up?</label>
+            <textarea
+              type="comments"
+              id="comments"
+              cols="30"
+              rows="10"
+            ></textarea>
+          </li>
+          <li>
+            <input type="submit" id="Submit" />
+          </li>
+        </ul>
+      </form>
+    </div>
     <script src="../jquery-3.5.1.js"></script>
-    <script></script>
+    <script>
+      (function () {
+        $("html").addClass("js");
+        var contactForm = {
+          container: $("#contact"),
+
+          config: {
+            effect: "slideToggle",
+            speed: 500,
+          },
+
+          init: function (config) {
+            $.extend(this.config, config);
+            $("<button></button>", {
+              text: "Contact Me",
+            })
+              .insertAfter("article:first")
+              .on("click", this.show);
+          },
+
+          show: function () {
+            var cf = contactForm,
+              container = cf.container,
+              config = cf.config;
+            if (container.is(":hidden")) {
+              cf.close();
+              container[config.effect](config.speed);
+            }
+          },
+
+          close: function () {
+            var $this = $(contactForm.container);
+
+            if ($this.find("span.close").length) return;
+
+            $("<span class=close>X</span>")
+              .prependTo($this)
+              .on("click", function () {
+                $this[contactForm.config.effect](contactForm.config.speed);
+              });
+          },
+        };
+        contactForm.init({
+          // effect: "fadeToggle",s
+          speed: 300,
+        });
+      })();
+    </script>
   </body>
 </html>
