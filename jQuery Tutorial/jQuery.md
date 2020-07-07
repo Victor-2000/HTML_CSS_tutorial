@@ -149,3 +149,21 @@
 - there is also a prependTo method
 - also there is an insertAfter and insertBefore method
   which works the same as the appendTo one
+
+# 3.1 Slides and Structure
+
+- if you want to use this for a specific element which is not
+  the one from which the function is called then you can use
+  the .call(thisArg) method which gets an this argument where you can put anything you want.
+- if you want to change multiple function calls for example  
+  you have .show() and .hide() somewhere in your code you can
+  use the array notation to change it to a single type of call
+  ex:
+  var effect = 'slideToggle';
+  .[effect](500)
+  ...
+  .[effect](500)
+- \$.extend(obj1,obj2) is a method that overrides the
+  included elements of obj2 with obj1.
+- .is('className') method can check up if the current tag has
+  some specific class or pseudo-class
