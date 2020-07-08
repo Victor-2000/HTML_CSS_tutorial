@@ -182,3 +182,12 @@
   parameter
 - \$.proxy(func,thisArg) changes the function so it takes
   thisArg as the 'this' value inside.
+
+# 3.3 Modifying Effect Speeds
+
+- when defining the speed of an effect you can also use
+  words like 'slow' or 'fast'
+- by using '\$.fx.speeds.\_default = 123' you can change
+  default speeds
+- by using '\$.fx.speeds.anySpeedName = 1234' you can make
+  new speed templates

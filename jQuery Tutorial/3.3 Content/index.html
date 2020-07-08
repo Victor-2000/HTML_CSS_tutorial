@@ -3,166 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Effects</title>
+    <title>Document</title>
     <style>
-      body {
-        width: 600px;
-        margin: auto;
-        font-family: sans-serif;
-      }
-
-      #contact {
-        background: #e3e3e3;
-        padding: 1em 2em;
-        position: relative;
-      }
-
-      .js #contact {
-        position: absolute;
-        top: 0;
-        width: inherit;
-        display: none;
-      }
-
-      #contact h2 {
-        margin-top: 0;
-      }
-
-      #contact ul {
-        padding: 0;
-      }
-
-      #contact li {
-        list-style: none;
-        margin-bottom: 1em;
-      }
-
-      /*Close button on form*/
-      .close {
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        font-weight: bold;
-        font-family: sans-serif;
+      h1 {
         cursor: pointer;
       }
-
-      /*Form inputs*/
-      input,
-      textarea {
-        width: 100%;
-        line-height: 2em;
-      }
-      input[type="submit"] {
-        width: auto;
-      }
-      label {
-        display: block;
-        text-align: left;
+      .content {
+        position: absolute;
       }
     </style>
   </head>
   <body>
-    <article>
-      <h1>My Awesome Post</h1>
+    <h1>Reveal</h1>
+    <div class="content">
       <p>
-        Laborum voluptate excepteur irure tempor cillum est reprehenderit culpa
-        magna sint cillum magna excepteur.
+        Officia labore amet nisi anim laboris irure eu est mollit fugiat. Duis
+        Lorem dolor Lorem sint. Nulla est tempor do labore occaecat laborum amet
+        minim proident labore duis voluptate aliqua. Id proident reprehenderit
+        tempor consectetur fugiat sit et. Ex culpa ex laboris nisi velit ea
+        incididunt ipsum exercitation.
       </p>
       <p>
-        In ullamco commodo non veniam nostrud consectetur Lorem. Amet ad aliquip
-        laboris duis fugiat ullamco irure nisi dolor. Culpa ad eu proident
-        eiusmod ex. Culpa ex amet excepteur qui est ex sunt sint qui sit dolor.
-        Fugiat duis exercitation veniam officia. Mollit occaecat esse eu labore
-        anim velit ipsum. Exercitation incididunt do pariatur dolore ex ullamco
-        eiusmod anim ullamco Lorem Lorem eu nulla.
+        Duis anim labore eu non ullamco eu minim esse ea id aliqua enim et
+        veniam. Incididunt ullamco est incididunt et do in consequat occaecat
+        mollit. Ipsum officia non consequat et aliquip labore dolore magna elit
+        Lorem. Dolor nostrud enim consequat ea Lorem quis culpa. Velit labore
+        aliqua quis consequat qui labore labore elit excepteur exercitation.
+        Lorem commodo id ipsum duis ullamco culpa minim nulla officia.
       </p>
-      <p>
-        Laborum excepteur ullamco qui deserunt excepteur duis aute enim dolor
-        Lorem commodo eiusmod ut.
-      </p>
-      <p>
-        Aute aliqua et cillum aute amet duis nulla veniam consequat irure dolor.
-        Laborum adipisicing consectetur ex sunt eu excepteur deserunt aliqua
-        tempor duis laborum velit voluptate. Sunt laborum reprehenderit eiusmod
-        sit id. Labore adipisicing eu velit nisi ipsum cillum.
-      </p>
-    </article>
-    <div id="contact">
-      <h2>Contact Me</h2>
-      <form action="#">
-        <ul>
-          <li>
-            <label for="name">Name:</label>
-            <input type="name" id="name" />
-          </li>
-          <li>
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" />
-          </li>
-          <li>
-            <label for="comments">What's Up?</label>
-            <textarea
-              type="comments"
-              id="comments"
-              cols="30"
-              rows="10"
-            ></textarea>
-          </li>
-          <li>
-            <input type="submit" id="Submit" />
-          </li>
-        </ul>
-      </form>
     </div>
     <script src="../jquery-3.5.1.js"></script>
     <script>
-      (function () {
-        $("html").addClass("js");
-        var contactForm = {
-          container: $("#contact"),
-
-          config: {
-            effect: "slideToggle",
-            speed: 500,
-          },
-
-          init: function (config) {
-            $.extend(this.config, config);
-            $("<button></button>", {
-              text: "Contact Me",
-            })
-              .insertAfter("article:first")
-              .on("click", this.show);
-          },
-
-          show: function () {
-            var cf = contactForm,
-              container = cf.container,
-              config = cf.config;
-            if (container.is(":hidden")) {
-              cf.close();
-              container[config.effect](config.speed);
-            }
-          },
-
-          close: function () {
-            var $this = $(contactForm.container);
-
-            if ($this.find("span.close").length) return;
-
-            $("<span class=close>X</span>")
-              .prependTo($this)
-              .on("click", function () {
-                $this[contactForm.config.effect](contactForm.config.speed);
-              });
-          },
-        };
-        contactForm.init({
-          // effect: "fadeToggle",s
-          speed: 300,
-        });
-      })();
+      var content = $("div.content");
+      content.hide();
+      $("h1").on("click", () => {
+        content.slideToggle("slow");
+      });
     </script>
   </body>
 </html>
