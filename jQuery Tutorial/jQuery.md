@@ -187,7 +187,125 @@
 
 - when defining the speed of an effect you can also use
   words like 'slow' or 'fast'
-- by using '\$.fx.speeds.\_default = 123' you can change
+- by using '\$.fx.speeds.default = 123' you can change
   default speeds
 - by using '\$.fx.speeds.anySpeedName = 1234' you can make
   new speed templates
+
+# 3.4 Creating Custom Effect Methods
+
+- if you want to do an action before the slider slides down
+  you can use
+  \$(this).slideDown(500, functionAfterSlide () {
+  ...
+  });
+- if you want to delay an effect for an ammount of time you
+  can use .delay(time) and after that the effect.
+- if you want to make a custom effect you should use:
+  \$.fn.effectName = function (speed, easing, callback) {
+  return /_The desired effects go here_/;
+  };
+  the effect will be named 'effectName' and it can be used as
+  other effects are used
+
+# 3.5 Full Control With animate
+
+- if you want to do a relative increment on some css
+  properties you can use '+=No' value. For example:
+  box.css("font-size", "+=5");
+- if you want to add more than one css changes to a box
+  you can use .css({
+  firstParameter: firstValue,
+  ...
+  lastParameter: lastValue,
+  });
+- .animate({firstParameter: firstValue,...lastParameter:
+  lastValue,}, time, easing) method animates the object from
+  the initial state to the one passed as parameter
+  - through the ammount of time passed as parameter
+  - you can choose 'linear' or 'swing' as an easing
+    (alternatively you can download an easing plugin).
+  - you can add a callback function also which will activate
+    after the animation is done.
+- the color is not animated but you can use a plugin
+- another way to use the animate function is:
+  box.animate(
+  {
+  parameter: paramVal,
+  },
+  {
+  duration: durationVal,
+  step: () => {}, // function exec every step
+  complete: () => {}, // function exec at the end
+  queue: true, //Do you want to wait for the previous animation?
+  }
+  );
+- if you want animate methods to go one after another you
+  can use .animate(...).animate(...). The second one will
+  be executed after the first one (provided the option queue
+  on the second one is true)
+- if you wanna get the width of a container you can use
+  .width() method.
+- if you wanna also include the padding and margin you can
+  use .outerWidth() method.
+- if you want to check if a variable is a function you can
+  use \$.isFunction(functionName)
+
+# 3.7 The Obligatory Slider (First Attempt)
+
+- if you want to make sure that other plugins aren't clashing
+  with jQuery $ you have to do this call and implement all the
+  jQuery functionality inside.
+(function ($) {
+
+})(jQuery);
+
+# 3.8 Prototypal Inheritance and Refactoring the Slider
+
+- every variable in JavaScript has a prototype. This prototype
+  is basically the variable type (class) it has builtin
+  properties and methods.
+  - to access a prototype you should use
+    Object.getPrototypeOf(varName) or varName.\_\_proto\_\_
+  - you should not confuse Object.getPrototypeOf(varName) with
+    varName.prototype because the latter only returns the
+    initial prototype of the supposed object (ex. for all
+    arrays) when the first one returns the prototype of the
+    current object.
+- for creating a prototype you need a constructor function
+  which can be any basic function which is saved in a variable
+  with capital letter will do.
+
+  - var Point = function (x, y) {
+    ----this.x = x;
+    ----this.y = y;
+    ----this.add = function (otherPoint) {
+    --------this.x += otherPoint.x;
+    --------this.y += otherPoint.y;
+    ----}
+    }
+    var p1 = new Point(3, 4);
+    var p2 = new Point(8, 6);
+    p1.add(p2);
+
+- though we don't want to implement the add method just to the
+  current object because it will do the implementation every
+  time an object is created so we add the function in the
+  prototype attribute.
+
+  - var Point = function (x, y) {
+    ----this.x = x;
+    ----this.y = y;
+    }
+
+    Point.prototype.add = function (otherPoint) {
+    ----this.x += otherPoint.x;
+    ----this.y += otherPoint.y;
+    }
+
+    var p1 = new Point(3, 4);
+    var p2 = new Point(8, 6);
+    p1.add(p2);
+
+- you can find more info about prototypes at:
+  https://docs.microsoft.com/en-us/previous-versions/msdn10/ff852808(v=msdn.10)

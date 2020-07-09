@@ -5,8 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <style>
+    p {
+      margin-top: 0;
+    }
+  </style>
   <body>
+    <h1>Click Me</h1>
+    <div class="content">
+      <p>
+        Amet magna non ea fugiat consectetur ut. Occaecat aute exercitation
+        nostrud aliquip non in cupidatat nulla cillum ut laborum aliqua. Commodo
+        ex veniam nisi esse. Cupidatat pariatur ea excepteur elit duis proident
+        ad. Reprehenderit consequat occaecat ullamco sint nisi sit esse culpa
+        labore anim commodo ex mollit. Eiusmod quis labore ullamco nostrud
+        aliquip ex eiusmod enim excepteur.
+      </p>
+      <p>
+        Laboris adipisicing officia exercitation ex. Enim ad consectetur est
+        commodo sint ipsum culpa amet veniam proident. Duis non sit velit
+        reprehenderit ex velit elit est consequat occaecat excepteur cupidatat
+        ipsum. Sunt dolor ad et ut adipisicing occaecat duis elit. Mollit
+        laborum duis mollit pariatur laborum sunt aliquip sit. Sunt magna dolor
+        excepteur ex excepteur cillum officia est aliqua nisi laboris quis. In
+        commodo quis voluptate adipisicing et ipsum tempor nostrud laborum
+        commodo sint.
+      </p>
+    </div>
     <script src="../jquery-3.5.1.js"></script>
-    <script></script>
+    <script>
+      (function () {
+        var content = $("div.content").hide();
+
+        jQuery.fn.flash = function (speed, easing, callback) {
+          var $this = $(this);
+
+          return $this.slideDown(500, function () {
+            $this.delay(2000);
+            $this.slideUp(500);
+          });
+        };
+
+        $("h1").on("click", function () {
+          content.flash();
+        });
+      })();
+    </script>
   </body>
 </html>

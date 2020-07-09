@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animate</title>
+    <style>
+      .content {
+        width: 500px;
+        margin: auto;
+        margin-top: 25vh;
+      }
+      .box {
+        width: 400px;
+        overflow: auto;
+        background: red;
+        /* padding: 2em; */
+      }
+      button {
+        position: relative;
+      }
+      #box {
+        border-radius: 20px;
+        width: 100px;
+        height: 100px;
+        background-color: #a7a7a7;
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+      <div class="box">
+        <h1>Some Content Here</h1>
+        <p>
+          Veniam ea do deserunt minim et minim Lorem irure deserunt. Consectetur
+          labore enim deserunt elit commodo proident. Amet mollit irure do
+          reprehenderit nostrud ullamco do. Nulla proident commodo ad
+          adipisicing. Sunt pariatur irure commodo veniam excepteur incididunt
+          culpa duis labore cupidatat id. Ex commodo labore minim amet
+          reprehenderit pariatur sint voluptate magna laborum.
+        </p>
+      </div>
+
+      <p><button>FadeSlideToggle</button></p>
+    </div>
+    <!-- <div id="box"></div> -->
+
+    <script src="../jquery-3.5.1.js"></script>
+    <script>
+      (function () {
+        var box = $("div.box"),
+          $window = $(window),
+          w = ($window.width() - box.outerWidth()) / 2,
+          h = ($window.height() - box.outerHeight()) / 2,
+          fancyBox = $("#box");
+
+        $.fn.fadeSlideToggle = function (speed, callback) {
+          return $(this).animate(
+            {
+              height: "toggle",
+              opacity: "toggle",
+            },
+            speed || 400,
+            callback
+          );
+        };
+
+        $("button").on("click", function () {
+          box.fadeSlideToggle(2000, function () {
+            console.log("finished");
+          });
+          // box
+          //   .animate({
+          //     left: w,
+          //     position: "absolute",
+          //   })
+          //   .animate(
+          //     {
+          //       top: h,
+          //     },
+          //     {
+          //       duration: 200,
+          //       queue: false,
+          //     }
+          //   );
+        });
+      })();
+    </script>
+  </body>
+</html>
