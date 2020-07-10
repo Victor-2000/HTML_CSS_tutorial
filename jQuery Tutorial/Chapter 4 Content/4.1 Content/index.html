@@ -6,7 +6,37 @@
     <title>Document</title>
   </head>
   <body>
-    <script src="../jquery-3.5.1.js"></script>
-    <script></script>
+
+    <script id=blogTemplate type=tuts/template>
+      <h2>{{title}}</h2>
+      <img src={{thumbnail}} alt={{title}}>
+    </script>
+
+    <script src="../../jquery-3.5.1.js"></script>
+    <script>
+      (function () {
+        var content = [
+          {
+            title: "My awesome blog post",
+            thumbnail:
+              "https://www.conferencecompass.com/wp-content/uploads/2017/01/EchoHawaii_event_medium-copy.png",
+          },
+          {
+            title: "My second awesome blog post",
+            thumbnail:
+              "https://d3g9pb5nvr3u7.cloudfront.net/sites/529657a5bc4626126841b025/-49515240/256.jpg",
+          },
+        ],
+        template = $.trim($('#blogTemplate').html()),
+        frag='';
+
+        var body = $('body');
+        $.each(content,function(index,obj){
+          frag+= template.replace(/{{title}}/ig, obj.title)
+                  .replace(/{{thumbnail}}/ig, obj.thumbnail);
+        });
+        body.append(frag);
+      })();
+    </script>
   </body>
 </html>

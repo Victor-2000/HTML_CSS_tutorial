@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="../../jquery-3.5.1.js"></script>
+    <script>
+      (function () {
+        var arr = [
+          {
+            first: "Jeffrey",
+            last: "Way",
+          },
+          {
+            first: "Allison",
+            last: "Way",
+          },
+          {
+            first: "Jeffrey",
+            last: "Smith",
+          },
+          {
+            first: "John",
+            last: "Doe",
+          },
+          {
+            first: "Thomas",
+            last: "Way",
+          },
+        ];
+
+        arr = $.grep(arr, function (obj, index) {
+          return obj.last === "Way";
+        });
+        console.log(arr);
+      })();
+    </script>
+  </body>
+</html>

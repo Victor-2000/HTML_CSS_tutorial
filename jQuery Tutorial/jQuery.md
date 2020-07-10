@@ -309,3 +309,87 @@
 
 - you can find more info about prototypes at:
   https://docs.microsoft.com/en-us/previous-versions/msdn10/ff852808(v=msdn.10)
+
+# 4.1 \$.each and Templating
+
+- for getting the html from an element instead of the node
+  you can use .html() method.
+- \$.trim cuts all the unneccesary whitespace.
+- when creating a template you want to use later you can do
+  it in js if you create a new script tag with an unique id
+  and type.
+- templates are parts of html code which also have some empty
+  parts where you can add data dynamically. ex:
+  &lt;script id=blogTemplate type=tuts/template>
+  ----&lt;h2>{{title}}&lt;/h2>
+  ----&lt;img src={{thumbnail}} alt={{title}}>
+  &lt;/script>
+- $.each() method is used when you don't have anything to 
+  select from the DOM but you want to search each element of 
+  an collection.ex: $.each(content,function(index,val){});
+- if you want to replace some elements in a string you can use
+  the .replace() method.
+  - inside the method you should specify the object you want
+    to replace between /.../ and after that the specifications
+  - in the specifications you can add the tag 'i' for
+    ignoring lowercase/uppercase characters (they'll be all
+    the same) and 'g' for searching more than one tag (if it
+    is repeated multiple times)
+
+# 4.2 Say Hello to Handlebars
+
+- Hadlebars is a very useful resource for creating templates.
+- You can format the templates as described above in the
+  previous lesson and after that you have to use this line
+  var template = Handlebars.compile(\$('#id-of-template').html())
+  which will basically load all the generic template into a
+  function named template in which you can pass the object as a
+  parameter. ex: template(obj);
+- if you have an array as a parameter you can use the:
+  {{#each this}}
+  ...
+  {{/each}}
+  tags to specify that you wanna go through each element
+  and if you wanna get a specific attribute which has the data
+  you change the 'this' if you wanna get the whole objects you
+  let 'this' remain.
+- if you want to include html in the attributes of the object
+  ex: {
+  --author: 'John Doe',
+  --tweet:'&lt;strong>30 Days&lt;/strong> to Learn jQuery Rocks'
+  }
+  you have to add to the the third pair of brackets to the tag
+  of the template ex: {{{tweet}}}
+- you can also use an
+  {{#if existentTag}}... {{else}} ... {{/if}} tag to write
+  something only if it exists (for example you don't want
+  to add a span if the tag does not exist in the object)
+  - there is also an 'if not' tag and it is written like this:
+    {{#unless nonExistentTag}} ... {{/unless}}
+
+# 4.3 The Twitter API
+
+- to get a JSON from a site you can use
+  \$.getJSON(this.url, function(json) {...do something with
+  the json here...});
+
+- \$.map(array,function) for all elements in an array, map
+  executes the specified function.
+
+# 4.4 Filtering with jQuery.grep
+
+- if you want to filter through an array of elements you can
+  use:
+  \$.grep(arr, function (item, index) {
+  ---return (here goes a condition which if is true adds the
+  ----------element to the return array);
+  });
+
+# 5.1 Custom Events and the Observer Pattern
+
+- if you want to execute some code that is attached to a node
+  event you can use \$(...).trigger('click');
+- you can also customise 'on' events by just writing them
+  ex: \$("body").on("clickityClack", function () {})
+- getJSON executes much later than console.log
+- by using the trigger method and making a custom 'on' event

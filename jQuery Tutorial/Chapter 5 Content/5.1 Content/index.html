@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p><button id="catButton">Click to get a cat</button></p>
+    <script id="cat-template" type="text/x-handlebars-template">
+      <img src="{{url}}" alt="Cat images" />
+    </script>
+    <script src="../../handlebars-v4.7.6.js"></script>
+    <script src="../../jquery-3.5.1.js"></script>
+    <script>
+      function getCat() {
+        $.getJSON(
+          "https://api.thecatapi.com/v1/images/search?size=small&mime_types=gif",
+          function (results) {
+            $(document).trigger("cat/results", results);
+          }
+        );
+      }
+
+      (function () {
+        var catTemp = $("script#cat-template");
+        var paragraph = $("p");
+        $("#catButton").on("click", getCat);
+        $(document).on("cat/results", function (e, results) {
+          var template = Handlebars.compile(catTemp.html());
+          paragraph.before(template(results));
+        });
+      })();
+    </script>
+  </body>
+</html>
