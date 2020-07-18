@@ -393,3 +393,120 @@
   ex: \$("body").on("clickityClack", function () {})
 - getJSON executes much later than console.log
 - by using the trigger method and making a custom 'on' event
+- you can use arrayName.join('') joins all elements of the
+  array and transforms them into a string.
+
+# 6.1 Loading Pages Asynchronously
+
+- if you want to load some html information from another html
+  folder \$("body").load("about.html .container")
+  - you can also use css notifiers if you want to get html
+    from a special part
+
+# 6.2 Interacting with the Server-Side
+
+- .val() is a method that gets the access to the value
+  contained inside tags.
+- .serialize() is another method that makes all the input
+  values into a list of serialised values (like in the GET)
+  and returns a string which contains what was sent from which
+  input.
+- $.post('filename.php',$(this).serialize(),function(data){
+  ...content here
+  }); the following method will post the information from the
+  source (\$(this).serialize()) which is usually the form to
+  the php file ('filename.php')
+  - the function is executed after the php code is fully
+    executed. It returns 'data' which is the values echoed in
+    the php
+- to open a file in php you use fopen('address','r/w') the
+  second option shows that you are able to write to this file
+  or read.
+- to write in a file you can use fwrite($f,string) where $f is
+  the variable and string is the string you want to write.
+- to close the file you can use fclose(\$f)
+- if you want to retrieve information from a post
+  which was sent to the current php file, you use
+  \$\_POST[category]
+  - category is the name of the info you wanna select
+- anything that needs security you use always POST for
+  everything else you can use GET
+- to erase slashes from php you can use the function
+  stripslashes(string)
+
+# 6.3-6.4 PHP and jQuery
+
+- in sql % refers to any number of characters after and \_
+  refers to on character of any type.
+- most of the time it is very useful to use partials for
+  not repeating parts of code in multiple places
+  <?php include '_partials/header.php'?> this way you
+  can import a partial or another php file you need.
+- while the page will load if the partials are not in place
+  the site will not run if you use the keyword require
+  ex: require 'functions.php'; then the php file wont
+  load till it finds functions.php
+- to get arguments from an object element you can use ->
+  for example: \$info->first_name gets the first_name
+  attribute from the info object
+- to check if a multiple choice is set to a value you can
+  use isset(\$\_POST['q']) (this will check if the post is
+  set to q in this particular case)
+- to set a global variable and import a global variable you
+  can use "global \$nameOfVariable;"
+- for importing information about a database you should use
+  a PDO object.
+  - when creating a PDO object you have to write:
+    new PDO('mysql:dbname=####;host=######;port=####',
+    admin,password);
+- if you want to make a query to the database object
+  you should call:
+  \$pdo->prepare(##The SQL query goes here##);
+  - the problem with prepare is that you can't use it with
+    dynamic variables so you have to use substitutes like
+    :variableName which will be eventually changed by the
+    execute method.
+- after preparing a statement you have to execute it:
+  $stmt->execute(array(':letter' => '_' . $letter . '%'));
+  when using the method execute you can add specified
+  changes in the query if there are any. For example here
+  you change the word :letter into _DYNAMIC LETTER VARIABLE%
+  where (_ is 1 letter of any kind and % is no matter how
+  many of any kind)
+- \$stmt->fetchAll(PDO::FETCH_OBJ); returns the result of the
+  execution as an object which can be manipulated further to
+  be shown on the page.
+- if you want to encode an object you can use
+  json_encode(\$objectVariable)
+
+# 6.5 Deferreds
+
+- when using a timer or an ajax request you most of the time
+  have to wait till it ends to continue doing some action
+  the best method to wait till the actions are done is to use
+  deferreds.
+  - first you have to declare a deferred
+    var deferred = new \$.Deferred();
+  - then you have to call deferred.resolve(); from the
+    function you wanna wait till its done (timeout for
+    example)
+  - all should be encapsulated in a function and it should
+    return deferred.promise()
+- the function above can be called with the
+  functionName().done(function(){}) where you pass a
+  function as a parameter which will be executed only when
+  the deffered.resolve() is called.
+- if you want to check also the case in which the function
+  fails you can use deferred.reject();
+- if you want to do something when a function fails to
+  deliver (you used deferred.reject()) you can call the
+  method .fail();
+- if you don't care if a function fails or succedes you can
+  use the .always method.
+- if you want to do success and fail at the same time but
+  they will be different you can use
+  .then(successCallback,failCallback)
+- you can use return \$.ajax(...).promise(); when you want to
+  execute a function when the request is done
+- \$.when(...Any number of events...).done(function(the same
+  nr of results){...})

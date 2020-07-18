@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background: green;
+        display: inline-block;
+        margin-right: 3em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">my box</div>
+    <div class="box">my box</div>
+    <div class="box">my box</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      function getTweets(search) {
+        return $.ajax({
+          url: "https://api.thecatapi.com/v1/images/search",
+          data: {
+            size: "small",
+            "x-api-key": "09fc1234-b540-48f9-b9d9-6a54d3d62f72",
+            limit: "25",
+          },
+          dataType: "json",
+        });
+      }
+
+      $.when(getTweets(), getTweets()).done(function (results1, results2) {
+        console.log(results1);
+        console.log(results2);
+      });
+
+      // $.searchTwitter = function () {
+      //   var dfd = new $.Deferred();
+      // return $.ajax({
+      //   url: "https://api.thecatapi.com/v1/images/search",
+      //   data: {
+      //     size: "small",
+      //     "x-api-key": "09fc1234-b540-48f9-b9d9-6a54d3d62f72",
+      //     limit: "25",
+      //   },
+      //   dataType: "json",
+      // }).promise();
+      // };
+
+      // var outer = $.searchTwitter();
+
+      // outer.then(function (results) {
+      //   console.log(results);
+      // });
+    </script>
+  </body>
+</html>

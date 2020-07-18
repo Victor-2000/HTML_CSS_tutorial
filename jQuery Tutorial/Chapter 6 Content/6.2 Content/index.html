@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>AJAX: POST</title>
+  </head>
+  <body>
+    <h1>Something to Save</h1>
+    <form action="#">
+      <textarea name="content" id="content" cols="30" rows="10"></textarea>
+      <p><button type="submit">Save</button></p>
+    </form>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+      (function () {
+        $.post("load.php", function (data) {
+          if (data) {
+            $("#content").val(data);
+          }
+        });
+
+        $("form").on("submit", function (e) {
+          $.post("save.php", $(this).serialize(), function (response) {
+            alert(response);
+          });
+
+          e.preventDefault();
+        });
+      })();
+    </script>
+  </body>
+</html>

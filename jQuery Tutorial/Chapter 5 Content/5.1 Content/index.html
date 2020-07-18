@@ -6,31 +6,39 @@
     <title>Document</title>
   </head>
   <body>
-    <p><button id="catButton">Click to get a cat</button></p>
-    <script id="cat-template" type="text/x-handlebars-template">
-      <img src="{{url}}" alt="Cat images" />
-    </script>
-    <script src="../../handlebars-v4.7.6.js"></script>
+    <h1>Hi there</h1>
+
     <script src="../../jquery-3.5.1.js"></script>
     <script>
-      function getCat() {
+      (function ($) {
+        var obj = $({});
+
+        $.each(
+          {
+            trigger: "publish",
+            on: "subscribe",
+            off: "unsubscribe",
+          },
+          function (key, val) {
+            $[val] = function () {
+              obj[key].apply(obj, arguments);
+            };
+          }
+        );
+      })(jQuery);
+      for (let i = 0; i < 4; i++) {
         $.getJSON(
           "https://api.thecatapi.com/v1/images/search?size=small&mime_types=gif",
           function (results) {
-            $(document).trigger("cat/results", results);
+            $.publish("twitter/results", results);
           }
         );
       }
 
-      (function () {
-        var catTemp = $("script#cat-template");
-        var paragraph = $("p");
-        $("#catButton").on("click", getCat);
-        $(document).on("cat/results", function (e, results) {
-          var template = Handlebars.compile(catTemp.html());
-          paragraph.before(template(results));
-        });
-      })();
+      $.subscribe("twitter/results", function (e, results) {
+        console.log(results);
+        $("body").append("<li>" + results["url"] + "</li>");
+      });
     </script>
   </body>
 </html>
