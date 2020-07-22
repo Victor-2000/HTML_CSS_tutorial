@@ -82,3 +82,29 @@
   function functionName($a,$b){
   ... some actions here and (maybe) a return
   }
+
+# 2.7 Local and Global PHP Variables
+
+- if you want to add a default value to the parameter you can
+  use function functionName(\$parameter = defaultValue){...}
+- for importing global variables you can use:
+  global $var1, $var2, \$var3;
+- function array_map(anonymousFunction($item), $array) is
+  executing a function to each element of the array
+- in case you want to use another variable from a function
+  which encases the current one you have to use the 'use'
+  keyword like this: function functionName() use (\$usedVar)
+
+# 2.8 PHP Include and PHP Require
+
+- if you want to add a html template like the header or
+  footer to a php file without actually writing it every
+  time, you can use: include('address to php file'); which
+  will basically will echo the contents of the php file.
+- require is the same as include except if the file is not  
+  found the page will return an error.
+- require_once is the same as require but it also ensures
+  that the php is called only once. For example if you add
+  includes and you have to call require more times you can
+  use require_once to assure that it is not done multiple
+  times.
