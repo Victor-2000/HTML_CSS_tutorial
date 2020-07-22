@@ -70,5 +70,15 @@
   in case the array is a key-value type.
 - for creating a for loop you call:
   for($i = 0; $i < 10; \$i++){
-    
+  ... Some processing
+  }
+- to get the number of items in an array you can use the  
+   function count(\$array);
+
+# 2.6 PHP Functions
+
+- for creating a function you should follow the following
+  syntax:
+  function functionName($a,$b){
+  ... some actions here and (maybe) a return
   }
