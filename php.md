@@ -108,3 +108,73 @@
   includes and you have to call require more times you can
   use require_once to assure that it is not done multiple
   times.
+
+# 3.1 PHP GET Requests
+
+- if you want to retrieve get information from a request
+  which is basically a change in the http/https address
+  after the ? mark, you can use \$\_GET['wantedParameter']
+  superglobal to get the parameters from the address.
+- IT IS CRITICAL TO MAKE SURE THAT EVERYTHING IS SECURE so
+  you have to validate the input from the html using special
+  functions (to prevent cross site scripting for example)
+- filter_input is on of those functions the syntax is the  
+  following:
+  filter_input(inputType,parameterName,validationType);
+  for example:
+  filter_input(INPUT_GET,'category',FILTER_VALIDATE_INT);
+  will check the parameter category from the get super
+  global variable and will validate for an integer.
+  If something is wrong this function will return false
+  in other case it will return the value.
+- if you want to stop completely a php script you can use
+  the function die() (especially useful when something is
+  wrong with the input (XSS attempt) )
+- if you want to read more about filters you can access
+  php.net/manual/en/filter.filters.php
+
+# 3.2 PHP POST Requests
+
+- \$\_POST['parameter'] is the same as get but you can retrieve
+  info from a form here, for ex:
+  &lt;form action="" method="POST">
+  &lt;input type="text" name="email" id="email">
+  &lt;/form>
+  if you do \$\_POST['email'] you will get the input with
+  the name email.
+- if you have only one form you have to check the type of  
+  request before reacting to a POST method by:
+  if(\$\_SERVER['REQUEST_METHOD'] == 'POST'){
+  ...do an action here
+  }
+- if you have multiple forms you can use:
+  if(isset(\$\_POST[submitButtonName])){
+  ...do an action here
+  }
+  this way you are sure that you do the required action to
+  the required button.
+- do not rely on server side to validate your info. Always  
+  validate it by yourself (and the server if you want to).
+
+# 3.3 PHP Sessions
+
+- in every php file where you plan to use session information
+  you should use session_start();
+- for adding constants you follow this syntax:
+  const CONSTANTNAME = value;
+- if you want to redirect to another page you can use:
+  redirect('Location: URLOFSOURCE');
+  - bear in mind that this should be executed before
+    any html is executed so you should declare the header
+    later.
+- if you want to set up a session parameter you have to call
+  \$\_SESSION[parameterName] = parameterValue;
+  before you must ensure that the session is started and to
+  call session_start() on every page you use the parameters.
+- to stop the session from working you should call:
+  session_unset(); // this will unset the session variables
+  session_destroy(); // this will totally destroy the session
+
+# 4.1 Separating PHP Logic From Presentation
+
+-
