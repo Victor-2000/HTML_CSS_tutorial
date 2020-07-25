@@ -177,4 +177,88 @@
 
 # 4.1 Separating PHP Logic From Presentation
 
--
+- you have to separate logic from the display most of the time
+  (separate it into controllers and views respectively)
+- the view also can be separated into layout(where the header
+  and the footer go) and content (where the main part of the
+  application goes)
+
+# 4.2 Working With Files
+
+- usually when you want to fetch general data from the php
+  files you store it in a config.php
+- app.php holds all the requires
+- if you wanna checkout the documentation of a function you
+  can just write php.net/functionName
+- file_put_contents(\$fname, '') adds contents to the file
+  the content can be even an empty string like above..
+- file_get_contents(\$fname) gets the contents of a file.
+
+# 4.3 Parse JSON and Output Data
+
+- to get formatted data from a json string you can use
+  json_decode(\$stringVar);
+- for accessing attributes from an object in php you have
+  to use -> instead of . like in java/javascript
+  $object->$attribute
+- when you are making a foreach loop that will show some
+  html (like tags) you can use the html friendly versions
+  of loops, for ex:
+
+   <?php foreach($model as $item):?>
+
+                <tr>
+                    <td><?= $item->term?></td>
+                    <td><?= $item->definition?></td>
+                </tr>
+
+    <?php endforeach;?>
+
+  - note that you use : as the { and the endforeach; as
+    the }
+
+# 4.5 Truthiness and Adding a PHP Search
+
+- strpos($text, $string) "you search for the needle in a
+  haystack" the function shows at which position is the
+  string in the text.
+- array_filter(arr,fn) the filter function returns the
+  elements that are filtered buy the condition function
+- when comparing 0 == false you will get true because 0
+  is a falsey value. If you don't want to get true you can
+  use === or !== then you will get false.
+
+# 4.6 Managing PHP Paths
+
+- <pre> __FILE__ </pre> is a variable that holds the absolute
+  path of the current file. If you need to create an absolute
+  path to another neighboring files this variable is very
+  useful.
+- the function dirname(absoluteAddress) gets the directory
+  address of the file.
+- if you want to go 1 directory above you can use '/../'
+  as a concatenation.
+- if you want to use a variable which is not predefined before
+  compilation (like 2 or 'awsd') you can't use const. Instead
+  you can use define('constName',constValue); (which is the
+  equivalent of final in JavaScript)
+
+# 4.7 Creating PHP Terms
+
+- when you want to convert/cast something into another format
+  you can use the java usual syntax: (object) for example.
+- to add an element at the end of an array you can use
+  $arrayName[] = $element;
+
+# 4.8 Deleting PHP Terms
+
+- unset(\$array[n]) is a function which can unset a cell from
+  an array.
+- when unsetting an array element which is taken from json
+  and will be put in a json file you should rebuild the
+  array because otherwise you will get an asociative array
+  as a result (ex: {'0':{...},'2':{...},...}) without the
+  missing element.
+  - to rebuild the array you should use the line
+    $new_array = array_values($old_array);
+    the function above returns the values of the old array.
