@@ -262,3 +262,144 @@
   - to rebuild the array you should use the line
     $new_array = array_values($old_array);
     the function above returns the values of the old array.
+
+# 5.1 PHP Namespaces
+
+- if you have a lot of files which have the same name you
+  have to use the 'namespace' keyword with the name of the
+  virtual folder you want to save it to, for example:
+  <?php namespace App\Data; 
+  when you use a function from the file you have to call
+  App\Data before it in this case or you can use the line:
+  'use App\Data;'
+  and call just Data\function_name()
+
+# 5.2 Introduction to PHP Classes
+
+- to declare a class in php you have to use the following
+  syntax:
+  class ClassName {
+  public $var;
+  private $var2;
+
+  function \_\_construct(){
+  //... constructor content
+  }
+
+  function dummy_function(){
+  //...
+  }
+  }
+  to create an object you call new ClassName($par1,$par2,...);
+
+# 5.3 Improving Code With PHP Classes
+
+- Most of the time it is a good practice to put functions in
+  different objects according to the use, also the data
+  related to it (or the path to the data)
+- it is a good practice to make private to functions and
+  varibles where possible.
+
+# 6.1 Introduction to MySQL
+
+- When creating a database you should add a primary key
+  most of the time the primary key is named id and has the
+  auto increment(A_I) box ticked.
+- type VARCHAR is a type of string with a certain length which
+  you specify in the next text box.
+
+# 6.2 Creating and Reading Data
+
+- Create - INSERT
+  INSERT INTO glossary_terms (term ,definition)//positioning
+  VALUES('css','cascading style sheets');//literal insertion
+
+  INSERT INTO glossary_terms (definition, term)
+  VALUES('JavaScript', 'js'); //order matters
+
+  INSERT INTO glossary_terms (term, definition)
+  VALUES('json', 'JavaScript object notation');
+
+- Read - SELECT
+
+  SELECT term FROM glossary_terms;
+  SELECT definition FROM glossary_terms;
+  SELECT term,definition FROM glossary_terms;
+  SELECT \* FROM glossary_terms; // read all the columns
+
+  SELECT definition FROM glossary_terms;
+  SELECT term FROM glossary_terms WHERE id > 1;
+  SELECT \* FROM glossary_terms WHERE id > 1
+  ORDER BY ID DESC; // shows all elements where id>1 and all
+  is shown in descending order.
+
+# 6.3 Updating and Deleting Data
+
+- Update - UPDATE
+  UPDATE golossary_terms
+  SET term = 'hello'; //updates all rows
+
+  UPDATE glossary_terms
+  SET term = 'css' where id = 1; //updates row 1
+
+  UPDATE glossary_terms
+  SET term = 'css', definition = 'hello, world' where id = 1;
+
+- Delete - DELETE
+  DELETE FROM glossary_terms; // Deletes all the table!!!
+  DELETE FROM glossary_terms WHERE id = 4;
+
+- when you delete a row id is not going to fill in for the
+  missing record so if you delete id = 4 then the next added
+  record will begin at 5.
+
+# 6.4 Using PHP Data Objects to Issue Queries
+
+- 'mysql:dbname=glossary;host=localhost;port=3306' that is
+  the connection address
+
+- you can use a PDO object for getting the information from
+  the database. PDO constructor accepts ($connection_address,
+$username,\$password)
+
+- the connection address, password and username should all be
+  in the config file.
+
+- when creating a PDO you should always encapsulate it in a
+  try catch because it will return confidential information
+  in case there is an error in creating the PDO.
+
+- the PDO has a query('SQL query') method where you can add
+  the SQL query as a parameter. The query method will return
+  a statement which is a new array which has all the rows with
+  the specifications from the string parameter.
+
+  - you can also add the second parameter: PDO::FETCH_CLASS
+    and you can add to what class you want to transform the
+    rows of the table as a third parameter.
+
+- after creating a variable which holds a pdo and a statement
+  you must close the variables (equal them to null) after full
+  use.
+
+# 6.5 Using PHP Prepared Statements
+
+- never ever concatenate sql code to get parameters without
+  sanitizing the parameters!!!
+
+  - instead of using concatenation which poses a risk in case
+    of an SQL injection you have to use prepared statements
+    the syntax is the following:
+    $stmt = $db->prepare($sql);
+    $stmt->execute([':var' => $var]);
+    In the query you add :var as a placeholder for the
+    variable.
+
+- LIKE - is a keyword which can be used in conjuction with
+  WHERE to get the elements from a column which are like the
+  string after LIKE. For example:
+  SELECT \* FROM glossary_terms WHERE term LIKE 'css'
+  will select all the items which contain css.
+  - The string after LIKE has some wildcards:
+    % - is any number of any characters
+    \_ - is one any character
