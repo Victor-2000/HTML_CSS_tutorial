@@ -1,0 +1,763 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/************************************
+    ==LESS VARIABLES
+*************************************/
+/************************************
+    ==LESS MIXINS
+*************************************/
+.container {
+  border-radius: 12px;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  background-clip: padding-box;
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera*/
+}
+/************************************
+    ==GENERAL STYLES
+*************************************/
+body {
+  font: 14px/21px "Cabin", Helvetica, Arial, sans-serif;
+  color: #6c6c6c;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+p {
+  margin-bottom: 21px;
+}
+h1 {
+  font: 36px/1.5em "Cabin", Helvetica, Arial, sans-serif;
+}
+h2,
+h3 {
+  font: 21px/1.5em "Cabin", Helvetica, Arial, sans-serif;
+}
+h4 {
+  font: 16px/1.5em "Cabin", Helvetica, Arial, sans-serif;
+}
+h5 {
+  font: 14px/1.5em "Cabin", Helvetica, Arial, sans-serif;
+}
+h6 {
+  font: 12px/1.5em "Cabin", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #ea492c;
+  text-decoration: none !important;
+}
+a:hover {
+  color: #17384e;
+}
+blockquote {
+  font: italic 21px/1.5em "Gentium Basic", Georgia, serif;
+  color: #2894d8;
+}
+blockquote cite {
+  display: block;
+  margin-top: 42px;
+  font-size: 16px;
+  font-style: normal;
+}
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ebebeb;
+  margin: 3em 0;
+}
+.link-go-top {
+  font: italic 14px "Gentium Basic", Georgia, serif;
+}
+.link-go-top:before {
+  content: "- ";
+}
+.link-go-top:after {
+  content: " -";
+}
+/************************************
+    ==MAIN HEADER
+*************************************/
+.top-header {
+  padding: 1.5em 0;
+}
+.logo a {
+  background: transparent url("../images/logo.png") left center no-repeat;
+  display: block;
+  height: 63px;
+  width: 140px;
+}
+.list-top-contact-info {
+  float: right;
+  margin-top: 1.5em;
+}
+.list-top-contact-info li {
+  float: left;
+  border-right: 1px dotted #6c6c6c;
+  margin-right: 1.5em;
+  padding-right: 1.5em;
+}
+.contact-fix {
+  float: right;
+}
+.hide-text {
+  font-size: 0.0000001px;
+}
+.button-top-cta {
+  float: right;
+  margin-top: 0.75em;
+}
+.button-pannel-top-cta {
+  display: none;
+}
+/************************************
+    ==MAIN CTA
+*************************************/
+.section-main-cta {
+  background: url("../images/pattern-dark-blue.jpg");
+  padding: 3em 0;
+  text-align: center;
+  -webkit-box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -8px 0 rgba(0, 0, 0, 0.2);
+}
+.section-main-cta h1 {
+  color: white;
+  font: 42px/1.5em "Cabin", Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.section-main-cta h2 {
+  color: #3694b7;
+  font: 26px/1.5em "Cabin", Helvetica, Arial, sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.section-main-cta blockquote {
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+.section-main-cta blockquote::before {
+  position: absolute;
+  content: url("../images/blockquote-dark-top.png");
+  width: 33px;
+  height: 23px;
+  left: -2em;
+  top: 0;
+}
+.section-main-cta blockquote::after {
+  position: absolute;
+  content: url("../images/blockquote-dark-bottom.png");
+  width: 33px;
+  height: 23px;
+  right: -2em;
+  bottom: 3.5em;
+}
+.section-main-cta blockquote cite {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.form-single-field {
+  padding: 3em 0;
+}
+.form-single-field input[type="email"],
+.form-single-field input[type="text"] {
+  height: 63px;
+  width: 100%;
+  font: 21px/1.5em "Cabin", Helvetica, Arial, sans-serif;
+  color: black;
+  padding: 0 7em 0 1em;
+  border-radius: 3px;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  background-clip: padding-box;
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera*/
+  -webkit-box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.15);
+  outline: none;
+  border: none;
+}
+.form-single-field > p {
+  width: 50%;
+  margin: 0 auto;
+  position: relative;
+}
+.form-single-field > p input[type="submit"] {
+  position: absolute;
+  right: 1em;
+  top: 0.8em;
+  cursor: pointer;
+  font: bold 14px "Cabin", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+/************************************
+    ==BIG FEATURES
+*************************************/
+.section-big-features {
+  background: url("../images/pattern-light-grey.jpg");
+  text-align: center;
+  padding: 3em 0;
+}
+.section-big-features h1,
+.section-big-features h3 {
+  color: #3b5568;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.75);
+}
+.section-big-features h2 {
+  color: #6694b4;
+}
+.list-big-features {
+  margin: 3em 0 1.5em 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.list-big-features li {
+  background: white;
+  border: 1px solid #ebebeb;
+  padding: 3em 1.5em 1.5em 1.5em;
+  margin: 0 1em;
+  margin-bottom: 1.5em;
+  border-radius: 3px;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  background-clip: padding-box;
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera*/
+  -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
+}
+.list-big-features li h3 {
+  margin-bottom: 21px;
+}
+.list-big-features li span[class~="icon-big"] {
+  margin-bottom: 21px;
+}
+/************************************
+    ==SMALL FEATURES
+*************************************/
+.section-small-features {
+  background: url("../images/pattern-dark.jpg");
+  text-align: center;
+  padding: 3em 0;
+}
+.section-small-features h1 {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.section-small-features h2,
+.section-small-features h3 {
+  color: #3694b7;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.section-small-features .link-go-top:hover {
+  color: white;
+}
+.list-small-features {
+  margin: 3em 0 1.5em 0;
+}
+.list-small-features li {
+  color: white;
+  text-align: left;
+  margin-bottom: 1.5em;
+}
+.list-small-features li h3 {
+  margin-bottom: 21px;
+}
+.list-small-features li h3,
+.list-small-features li p {
+  margin-left: 64px;
+}
+.list-small-features li span[class~="icon-big"] {
+  float: left;
+}
+/************************************
+    ==CUSTOMERS
+*************************************/
+.section-customers {
+  background: white;
+  text-align: center;
+  padding: 3em 0;
+}
+.section-customers h1 {
+  color: #3b5568;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.section-customers h2 {
+  color: #6694b4;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.section-customers blockquote {
+  position: relative;
+  margin: 0 2em;
+}
+.section-customers blockquote::before {
+  position: absolute;
+  content: url("../images/blockquote-light-top.png");
+  width: 33px;
+  height: 23px;
+  left: -2em;
+  top: 0;
+}
+.section-customers blockquote::after {
+  position: absolute;
+  content: url("../images/blockquote-light-bottom.png");
+  width: 33px;
+  height: 23px;
+  right: -2em;
+  bottom: 3.5em;
+}
+.section-customers blockquote cite {
+  color: #6c6c6c;
+}
+.list-customers {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 3em;
+}
+.list-customers img {
+  margin: 0 2.5em 1.5em 0;
+}
+.list-customers .client-fix {
+  margin: 0.75em 2.5em 0.75em 0;
+}
+/************************************
+    ==GALLERY
+*************************************/
+.section-gallery {
+  background: url("../images/pattern-light-grey.jpg");
+  text-align: center;
+  padding: 3em 0;
+  -webkit-box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+.section-gallery h1 {
+  color: #3b5568;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.section-gallery h2 {
+  color: #6694b4;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.cycle-slideshow {
+  margin: 3em auto;
+  width: 100%;
+  max-width: 600px;
+}
+.cycle-slideshow img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+.cycle-prev,
+.cycle-next {
+  display: block;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  background: url("../images/sprites.png");
+}
+.cycle-prev {
+  top: 50%;
+  left: -80px;
+  margin-top: -21px;
+  background-position: 0 -128px;
+}
+.cycle-prev:hover {
+  background-position: -128px -128px;
+}
+.cycle-next {
+  top: 50%;
+  right: -80px;
+  margin-top: -21px;
+  background-position: -64px -128px;
+}
+.cycle-next:hover {
+  background-position: -192px -128px;
+}
+#alt-caption {
+  font: italic 14px/21px #6c6c6c "Gentium Basic", Georgia, serif;
+  margin-bottom: 3em;
+}
+#alt-caption:before {
+  content: "- ";
+}
+#alt-caption:after {
+  content: " -";
+}
+/************************************
+    ==FOOTER CTA
+*************************************/
+.section-footer-cta {
+  background-color: white;
+  -webkit-box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 3em 0 0 0;
+}
+.section-footer-cta h1 {
+  color: #3b5568;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.section-footer-cta h2 {
+  color: #6694b4;
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+.section-footer-cta .button-footer-cta {
+  margin: 3em 0 1.5em 0;
+}
+/************************************
+    ==FOOTER
+*************************************/
+.site-footer {
+  padding-bottom: 1.5em;
+}
+.list-footer-menu li,
+.list-social-icons li {
+  float: left;
+}
+.list-social-icons {
+  float: right;
+}
+.list-social-icons li {
+  margin: 0 0 0.75em 0.75em;
+}
+.list-social-icons li a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+}
+.twitter,
+.facebook,
+.linkedin,
+.googleplus {
+  background: url("../images/sprites.png");
+}
+.twitter {
+  background-position: 0 -192px;
+}
+.facebook {
+  background-position: -64px -192px;
+}
+.linkedin {
+  background-position: -128px -192px;
+}
+.googleplus {
+  background-position: -192px -192px;
+}
+/************************************
+    ==BUTTONS
+*************************************/
+.button {
+  display: inline-block;
+  text-decoration: none !important;
+  color: white !important;
+  padding: 0 1em;
+  background-color: #e63617;
+  background-image: -webkit-linear-gradient(top, #ea492c, #e63617);
+  background-image: -moz-linear-gradient(top, #ea492c, #e63617);
+  background-image: -o-linear-gradient(top, #ea492c, #e63617);
+  background-image: -ms-linear-gradient(top, #ea492c, #e63617);
+  background-image: linear-gradient(top, #ea492c, #e63617);
+  border-radius: 3px;
+  /* Android 2.1+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera 10.50+, Safari 5+ */
+  /* useful if you don't want a bg color from leaking outside the border: */
+  background-clip: padding-box;
+  /* Android 2.2+, Chrome, Firefox 4+, IE 9+, iOS 4+, Opera*/
+  -webkit-box-shadow: 0 0 0 4px #fdfdfd, inset 0 1px 2px #f6ada0;
+  box-shadow: 0 0 0 4px #fdfdfd, inset 0 1px 2px #f6ada0;
+  border: 1px solid #e63617;
+  height: 3em;
+  line-height: 3em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+}
+.button:hover {
+  color: white;
+  background-color: #ea492c;
+  background-image: -webkit-linear-gradient(top, #ec5d43, #ea492c);
+  background-image: -moz-linear-gradient(top, #ec5d43, #ea492c);
+  background-image: -o-linear-gradient(top, #ec5d43, #ea492c);
+  background-image: -ms-linear-gradient(top, #ec5d43, #ea492c);
+  background-image: linear-gradient(top, #ec5d43, #ea492c);
+}
+.button:active {
+  color: white;
+  background-color: #e63617;
+  background-image: -webkit-linear-gradient(top, #ea492c, #e63617);
+  background-image: -moz-linear-gradient(top, #ea492c, #e63617);
+  background-image: -o-linear-gradient(top, #ea492c, #e63617);
+  background-image: -ms-linear-gradient(top, #ea492c, #e63617);
+  background-image: linear-gradient(top, #ea492c, #e63617);
+  -webkit-box-shadow: 0 0 0 4px #fdfdfd, inset 0 1px 5px #b72b12;
+  box-shadow: 0 0 0 4px #fdfdfd, inset 0 1px 5px #b72b12;
+}
+/************************************
+    ==ICONS
+*************************************/
+.icon-small {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("../images/sprites.png");
+}
+.icon-big {
+  display: inline-block;
+  width: 42px;
+  height: 42px;
+  background: url("../images/sprites.png");
+}
+.phone {
+  background-position: 0 0;
+  margin: 0 0.75em -3px 0;
+}
+.envelope {
+  background-position: -64px 0;
+  margin: 0 0.75em -3px 0;
+}
+.arrow-right {
+  background-position: -128px 0;
+  margin: 0 0 -4px 0.75em;
+}
+.ecommerce {
+  background-position: 0 -64px;
+}
+.books {
+  background-position: -64px -64px;
+}
+.settings {
+  background-position: -128px -64px;
+}
+/************************************
+    ==RETINA IMAGES
+*************************************/
+@media screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-device-pixel-ratio: 2) {
+  .logo a {
+    background: transparent url("../images/logo-retina.png") left center no-repeat;
+    background-size: 133px 27px;
+  }
+  .icon-small,
+  .icon-big,
+  .cycle-prev,
+  .cycle-next,
+  .twitter,
+  .facebook,
+  .linkedin,
+  .googleplus {
+    background: url("../images/sprites-retina.png");
+    background-size: 256px 256px;
+  }
+}
+/************************************
+    ==RETINA IMAGES
+*************************************/
+.wf-loading * {
+  opacity: 0;
+}
+.wf-loading {
+  background: url("../images/ajax-loader.gif") center center no-repeat;
+  height: 100%;
+}
+.wf-active *,
+.wf-inactive * {
+  -moz-transition: opacity 1s ease-out;
+  -webkit-transition: opacity 1s ease-out;
+  -o-transition: opacity 1s ease-out;
+  transition: opacity 1s ease-out;
+}
+/************************************
+    ==RESPONSIVE/ADAPTIVE STUFF
+*************************************/
+/* 
+//BOOTSTRAP MEDIA QUERIES
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { ... }
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767.98px) { ... }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991.98px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199.98px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+@media (min-width: 992px) {
+  .list-big-features li {
+    width: 28%;
+  }
+}
+@media (max-width: 991px) {
+  .logo-container-mobile,
+  .top-container-mobile {
+    width: 100%;
+    float: none;
+  }
+  .logo a {
+    background-position: center center;
+    width: 100%;
+  }
+  .form-single-field > p {
+    width: 75%;
+  }
+}
+@media (max-width: 663px) {
+  .top-container-mobile {
+    display: flex;
+    justify-content: center;
+  }
+  .top-container-mobile .list-top-contact-info > li:last-child {
+    border-right: none;
+    margin-right: 0.75em;
+  }
+  #large-screen-button {
+    display: none;
+  }
+  .button-pannel-top-cta {
+    display: flex;
+    justify-content: center;
+  }
+  .button-top-cta {
+    float: none;
+  }
+}
+/************************************
+    ==IE8
+*************************************/
+.ie8 .form-single-field input[type="email"],
+.ie8 .form-single-field input[type="text"] {
+  padding: 0.6em 1em 0.4em 1em;
+}
